@@ -46,3 +46,14 @@
             if self.N[x] == vertice:
                 return x
         return False
+    
+    def vizinho(self, vertice):
+        vizinhos = []
+        for x in range(len(self.N)):
+            if self.N[x] == vertice:
+                for y in range(len(self.M[x])):
+                    if self.M[x][y] == 1:
+                        vizinhos.append(self.N[y])
+                    if self.M[y][x] == 1:
+                        vizinhos.append(self.N[y])
+        return vizinhos
